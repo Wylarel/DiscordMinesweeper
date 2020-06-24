@@ -1,6 +1,6 @@
 import random
 
-convert = ["💥", "🔳", ":one:", ":two:", ":three:", ":four:", ":five:", ":six:", ":seven:", ":eight:"]
+convert = ["💥", "🔳", "1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣"]
 
 
 def setupgrid(gridsize, start, numberofmines):
