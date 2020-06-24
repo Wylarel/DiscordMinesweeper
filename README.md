@@ -7,7 +7,7 @@
 ## Demo
 You can either easily use the project by importing `minesweeper.py` and ignoring/deleting the other files, or use `demo.py` wich will print the result in the console and in your clipboard.
   
-![Demo](https://file.wylarel.com/sJPqDBDDal.gif)
+![Demo](https://file.wylarel.com/discordminesweeper.gif)
 
 ## Discord Bot
 You can freely edit and/or copy the `discordbot.py` file to make your own minesweeper discord bot, try to give me some credit if you use it tho :wink:
