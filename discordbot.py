@@ -2,7 +2,7 @@ from discord.ext import commands
 
 import minesweeper as ms
 
-TOKEN = "YOUR_DISCORD_BOT_TOKEN_HERE"
+TOKEN = open("TOKEN", "r").read()
 
 client = commands.Bot(command_prefix='!', case_insensitive=True)
 
@@ -26,6 +26,13 @@ async def minesweeper(ctx, size=10, difficulty=4):
         "\n**Grid:**\n%grid%\n"
         "\n**Solution:**\n||%solution%||"
     )
-    await ctx.send(ms.main(text=text, size=size, difficulty=difficulty))
+    output = ms.main(text=text, size=size, difficulty=difficulty)
+    await ctx.send(str(len(output)))
+    print(output)
+    if len(output) < 1800:
+        await ctx.send(output)
+    else:
+        await ctx.send(":x: The grid is too big for Discord (" + str(len(output)) + " characters)")
+
 
 client.run(TOKEN)

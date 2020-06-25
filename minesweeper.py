@@ -1,4 +1,5 @@
 import random
+import numpy as np
 
 convert = ["💥", "🔳", "1️⃣", "2️⃣", "3️⃣", "4️⃣", "5️⃣", "6️⃣", "7️⃣", "8️⃣"]
 
@@ -8,8 +9,10 @@ def setupgrid(gridsize, start, numberofmines):
 
     mines = getmines(emptygrid, start, numberofmines)
 
-    for i, j in mines:
-        emptygrid[i][j] = -1
+    for x in range(gridsize):
+        for y in range(gridsize):
+            if mines[x][y]:
+                emptygrid[x][y] = -1
 
     grid = getnumbers(emptygrid)
 
@@ -40,15 +43,20 @@ def getneighbors(grid, rowno, colno):
 
 
 def getmines(grid, start, numberofmines):
-    mines = []
-    neighbors = getneighbors(grid, *start)
+    size = len(grid)
+    mines = np.zeros((size, size), dtype=np.bool)
+    free_slots = list(zip(*np.where(~mines)))
 
-    for i in range(numberofmines):
-        cell = getrandomcell(grid)
-        while cell == start or cell in mines or cell in neighbors:
-            cell = getrandomcell(grid)
-        mines.append(cell)
+    # Start
+    free_slots.remove(start)
+    for n in getneighbors(grid, *start):
+        if n in free_slots:
+            free_slots.remove(n)
 
+    # Generation
+    np.random.shuffle(free_slots)
+    for _ in range(numberofmines):
+        mines[free_slots.pop()] = True
     return mines
 
 
@@ -76,11 +84,15 @@ def printgrid(solution, grid, start=None):
     return out
 
 
-def main(text, size=10, difficulty=-1):
-    numberofmines = size * difficulty if difficulty != -1 else 4
+def main(text, size=10, difficulty=4):
+    numberofmines = size * difficulty
 
-    start = (random.randint(0, size), random.randint(0, size))
+    start = (random.randint(0, size-1), random.randint(0, size-1))
     setup = setupgrid(gridsize=size, start=start, numberofmines=numberofmines)
     grid = printgrid(False, setup, start=start)
     solution = printgrid(True, setup)
-    return text.replace("%size%", str(size)).replace("%mines%", str(numberofmines)).replace("%grid%", grid).replace("%solution%", solution)
+    return text.replace("%size%", str(size))\
+        .replace("%difficulty", str(difficulty))\
+        .replace("%mines%", str(numberofmines))\
+        .replace("%grid%", grid)\
+        .replace("%solution%", solution)

@@ -4,7 +4,7 @@ import pyperclip
 text = (
     "**MINESWEEPER**"
     "\nBy Wylarel\n"
-    "\n*Size:* `%size%x%size%` | *Mines:* `%mines%`\n"
+    "\n*Size:* `%size%x%size%` | *Difficulty:* `%difficulty%` | *Mines:* `%mines%`\n"
     "\n**Grid:**\n%grid%\n"
     "\n**Solution:**\n||%solution%||"
 )
