@@ -19,7 +19,11 @@ demo.py: `minesweeper, pyperclip`
 discordbot.py: `minesweeper, discord`
 
 ## Example
-Here's an example of the output with the default input (Size=10, Difficulty=4):
+### Input  
+**Text**="\*\*MINESWEEPER\*\*"\nBy Wylarel\n\n\*Size:\* \`%size%x%size%\` | \*Mines:\* \`%mines%\`\n\n\*\*Grid:\*\*\n%grid%\n\n\*\*Solution:\*\*\n||%solution%||"  
+**Size**=10  
+**Difficulty**=4  
+### Output
 ```
 **MINESWEEPER**
 By Wylarel
