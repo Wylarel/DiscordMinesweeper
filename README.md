@@ -12,7 +12,7 @@ You can either easily use the project by importing `minesweeper.py` and ignoring
 
 ## Discord Bot
 You can freely edit and/or copy the `discordbot.py` file to make your own minesweeper discord bot, try to give me some credit if you use it tho :wink:
-Don't forget to replace in placeholder in the `TOKEN` text file with your [Discord bot token](https://discord.com/developers/applications) and never publish it online with your token in the code.
+Don't forget to put your [Discord bot token](https://discord.com/developers/applications) in the `TOKEN` text file and never publish it online with your token in the code.
 
 Alternatively, you can [invite my minesweeper discord bot](https://discord.com/oauth2/authorize?client_id=725682323449839737&permissions=8&scope=bot). Commands: `ms help` & `ms new <size> <difficulty>`
 
