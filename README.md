@@ -2,7 +2,7 @@
 ## A minesweeper grid generator for, inter alia, [Discord](https://discord.com/) markdown
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://wylarel.com/mit/)
 [![Discord](https://img.shields.io/badge/Chat-Discord-blue)](https://discord.gg/7qvmeh2)
-[![Python](https://img.shields.io/badge/Made%20With-Python-orange)](https://www.python.org/)
+[![Python](https://img.shields.io/badge/Made%20with-Python-orange)](https://www.python.org/)
 
 ## Demo
 You can either easily use the project by importing `minesweeper.py` and ignoring/deleting the other files, or use `demo.py` wich will print the result in the console and in your clipboard.
