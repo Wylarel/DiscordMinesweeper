@@ -11,16 +11,16 @@ You can either easily use the project by importing `minesweeper.py` and ignoring
 
 ## Discord Bot
 You can freely edit and/or copy the `discordbot.py` file to make your own minesweeper discord bot, try to give me some credit if you use it tho :wink:
-Don't forget to replace the token variable with your [Discord bot token](https://discord.com/developers/applications) and never publish it online with your token in the code, I have no idea how to do otherwise, I'll learn soon.
+Don't forget to replace in placeholder in the `TOKEN` text file with your [Discord bot token](https://discord.com/developers/applications) and never publish it online with your token in the code.
 
 ## Dependencies
-minesweeper.py: `random`
+minesweeper.py: `random, numpy`
 demo.py: `minesweeper, pyperclip`
 discordbot.py: `minesweeper, discord`
 
 ## Example
 ### Input  
-**Text**="\*\*MINESWEEPER\*\*"\nBy Wylarel\n\n\*Size:\* \`%size%x%size%\` | \*Mines:\* \`%mines%\`\n\n\*\*Grid:\*\*\n%grid%\n\n\*\*Solution:\*\*\n||%solution%||"  
+**Text**="\*\*MINESWEEPER\*\*"\nBy Wylarel\n\n\*Size:\* \`%size%x%size%\` | \*Difficulty:\* \`%difficulty%\` | \*Mines:\* \`%mines%\`\n\n\*\*Grid:\*\*\n%grid%\n\n\*\*Solution:\*\*\n||%solution%||"  
 **Size**=10  
 **Difficulty**=4  
 ### Output
@@ -28,7 +28,7 @@ discordbot.py: `minesweeper, discord`
 **MINESWEEPER**
 By Wylarel
 
-*Size:* `10x10` | *Mines:* `40`
+*Size:* `10x10` | *Difficulty:* `4` | *Mines:* `40`
 
 **Grid:**
 ||1️⃣||||1️⃣||||🔳||🔳||🔳||||2️⃣||||💥||||3️⃣||||💥||||2️⃣||
