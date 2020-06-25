@@ -92,7 +92,7 @@ def main(text, size=10, difficulty=4):
     grid = printgrid(False, setup, start=start)
     solution = printgrid(True, setup)
     return text.replace("%size%", str(size))\
-        .replace("%difficulty", str(difficulty))\
+        .replace("%difficulty%", str(difficulty))\
         .replace("%mines%", str(numberofmines))\
         .replace("%grid%", grid)\
         .replace("%solution%", solution)
