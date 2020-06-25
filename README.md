@@ -3,6 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://wylarel.com/mit/)
 [![Discord](https://img.shields.io/badge/Chat-Discord-blue)](https://discord.gg/7qvmeh2)
 [![Python](https://img.shields.io/badge/Made%20with-Python-orange)](https://www.python.org/)
+[![Invite](https://img.shields.io/badge/Discord%20bot-Invite-orange)](https://discord.com/oauth2/authorize?client_id=725682323449839737&permissions=8&scope=bot)
 
 ## Demo
 You can either easily use the project by importing `minesweeper.py` and ignoring/deleting the other files, or use `demo.py` wich will print the result in the console and in your clipboard.
