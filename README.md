@@ -1,4 +1,4 @@
-# DiscordMinesweeper
+# Discord Minesweeper
 ## A minesweeper grid generator for, inter alia, [Discord](https://discord.com/) markdown
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://wylarel.com/mit/)
 [![Discord](https://img.shields.io/badge/Chat-Discord-blue)](https://discord.gg/7qvmeh2)
