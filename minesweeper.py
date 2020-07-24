@@ -91,8 +91,4 @@ def main(text, size=10, difficulty=4):
     setup = setupgrid(gridsize=size, start=start, numberofmines=numberofmines)
     grid = printgrid(False, setup, start=start)
     solution = printgrid(True, setup)
-    return text.replace("%size%", str(size))\
-        .replace("%difficulty%", str(difficulty))\
-        .replace("%mines%", str(numberofmines))\
-        .replace("%grid%", grid)\
-        .replace("%solution%", solution)
+    return text.format(size=str(size), difficulty=str(difficulty), mines=str(numberofmines), grid=grid)
