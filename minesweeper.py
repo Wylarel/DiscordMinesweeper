@@ -70,25 +70,26 @@ def getnumbers(grid):
     return grid
 
 
-def printgrid(solution, grid, start=None):
-    if start is None:
-        start = (0, 0)
+def printgrid(solution, grid, start):
     size = len(grid)
-    out = ""
+    lines = []
     for x in range(0, size):
         for y in range(0, size):
-            cell = grid[x][y]
-            spoiler = "" if ((x == start[0] and y == start[1]) or solution) else "||"
-            out += spoiler + convert[cell + 1] + spoiler
-        out += "" if x == size - 1 else "\n"
-    return out
+            lines.append(
+                "{spoiler}{cell}{spoiler}".format(
+                    spoiler="" if ((x == start[0] and y == start[1]) or solution) else "||",
+                    cell=convert[grid[x][y] + 1]
+                )
+            )
+        lines.append("\n" if x != size - 1 else "")
+    return "".join(lines)
 
 
-def main(text, size=10, difficulty=4):
+def main(text, size=10, difficulty=3):
     numberofmines = size * difficulty
 
     start = (random.randint(0, size-1), random.randint(0, size-1))
     setup = setupgrid(gridsize=size, start=start, numberofmines=numberofmines)
     grid = printgrid(False, setup, start=start)
-    solution = printgrid(True, setup)
-    return text.format(size=str(size), difficulty=str(difficulty), mines=str(numberofmines), grid=grid)
+    solution = printgrid(True, setup, start=start)
+    return text.format(size=str(size), difficulty=str(difficulty), mines=str(numberofmines), grid=grid, solution=solution)

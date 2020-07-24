@@ -18,13 +18,13 @@ async def ping(ctx):
 
 
 @client.command(name='minesweeper', aliases=['ms'], help='Minesweeper Bot')
-async def minesweeper(ctx, size=10, difficulty=4):
+async def minesweeper(ctx, size=10, difficulty=3):
     text = (
         "**MINESWEEPER**"
         "\nBy Wylarel\n"
-        "\n*Size:* `%size%x%size%` | *Difficulty:* `%difficulty%` | *Mines:* `%mines%`\n"
-        "\n**Grid:**\n%grid%\n"
-        "\n**Solution:**\n||%solution%||"
+        "\n*Size:* `{size}x{size}` | *Difficulty:* `{difficulty}` | *Mines:* `{mines}`\n"
+        "\n**Grid:**\n{grid}\n"
+        "\n**Solution:**\n||{solution}||"
     )
     output = ms.main(text=text, size=size, difficulty=difficulty)
     await ctx.send(str(len(output)))
