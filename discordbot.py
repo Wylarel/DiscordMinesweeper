@@ -18,7 +18,7 @@ async def ping(ctx):
 
 
 @client.command(name='minesweeper', aliases=['ms'], help='Minesweeper Bot')
-async def minesweeper(ctx, size=10, difficulty=3):
+async def minesweeper(ctx, size=10, difficulty=2):
     text = (
         "**MINESWEEPER**"
         "\nBy Wylarel\n"
@@ -27,12 +27,11 @@ async def minesweeper(ctx, size=10, difficulty=3):
         "\n**Solution:**\n||{solution}||"
     )
     output = ms.main(text=text, size=size, difficulty=difficulty)
-    await ctx.send(str(len(output)))
-    print(output)
-    if len(output) < 1800:
-        await ctx.send(output)
-    else:
+    if len(output) > 2000:
         await ctx.send(":x: The grid is too big for Discord (" + str(len(output)) + " characters)")
+        return
+
+    await ctx.send(output)
 
 
 client.run(TOKEN)

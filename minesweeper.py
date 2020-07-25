@@ -14,9 +14,7 @@ def setupgrid(gridsize, start, numberofmines):
             if mines[x][y]:
                 emptygrid[x][y] = -1
 
-    grid = getnumbers(emptygrid)
-
-    return grid
+    return getnumbers(emptygrid)
 
 
 def getrandomcell(grid):
@@ -38,22 +36,19 @@ def getneighbors(grid, rowno, colno):
                 continue
             elif -1 < (rowno + i) < gridsize and -1 < (colno + j) < gridsize:
                 neighbors.append((rowno + i, colno + j))
-
     return neighbors
 
 
 def getmines(grid, start, numberofmines):
     size = len(grid)
     mines = np.zeros((size, size), dtype=np.bool)
-    free_slots = list(zip(*np.where(~mines)))
+    free_slots = list(np.ndindex(size, size))
 
-    # Start
     free_slots.remove(start)
     for n in getneighbors(grid, *start):
         if n in free_slots:
             free_slots.remove(n)
 
-    # Generation
     np.random.shuffle(free_slots)
     for _ in range(numberofmines):
         mines[free_slots.pop()] = True
@@ -85,8 +80,8 @@ def printgrid(solution, grid, start):
     return "".join(lines)
 
 
-def main(text, size=10, difficulty=3):
-    numberofmines = size * difficulty
+def main(text, size=10, difficulty=2.0):
+    numberofmines = round(size * difficulty / 2)
 
     start = (random.randint(0, size-1), random.randint(0, size-1))
     setup = setupgrid(gridsize=size, start=start, numberofmines=numberofmines)

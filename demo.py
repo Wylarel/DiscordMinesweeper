@@ -9,6 +9,6 @@ text = (
     "\n**Solution:**\n||{solution}||"
 )
 
-OUTPUT = minesweeper.main(text=text, size=10, difficulty=3)  # Get the output with the default
+OUTPUT = minesweeper.main(text=text)  # Get the output with the default
 print(OUTPUT)  # Print the output in the console
 pyperclip.copy(OUTPUT)  # Copy the output in the clipboard
